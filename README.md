@@ -68,13 +68,6 @@ Content-Type: application/json
 **Request:**
 ```http
 GET /account/1234567890
-Content-Type: application/json
-{
-  "senderAccountId": "1234567890",
-  "recipientAccountId": "0987654321",
-  "transferAmount": "5000.00",
-  "transferDate": "2025-01-30T10:00:00"
-}
 ```
 **Response:**
 ```array
@@ -95,11 +88,11 @@ Content-Type: application/json
     }
 ]
 ```
-http://localhost:8080/api/transfers/account/1234567890
+
 ### Cancel a Transfer
 **Request:**
 ```http
-PUT /api/v1/transfers/1/cancel
+Delete /api/v1/transfers/1/cancel
 ```
 **Response:**
 ```json
