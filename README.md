@@ -63,6 +63,39 @@ Content-Type: application/json
   "status": "PENDING"
 }
 ```
+
+### Fetch Pending Transfers
+**Request:**
+```http
+GET /account/1234567890
+Content-Type: application/json
+{
+  "senderAccountId": "1234567890",
+  "recipientAccountId": "0987654321",
+  "transferAmount": "5000.00",
+  "transferDate": "2025-01-30T10:00:00"
+}
+```
+**Response:**
+```array
+[
+    {
+        "transferId": 2,
+        "senderAccountId": 1234567890,
+        "recipientAccountId": 987654321,
+        "transferAmount": 5000.00,
+        "transferDate": "2025-12-01T12:00:00"
+    },
+    {
+        "transferId": 5,
+        "senderAccountId": 1234567890,
+        "recipientAccountId": 987654321,
+        "transferAmount": 5000.00,
+        "transferDate": "2025-01-26T20:16:00"
+    }
+]
+```
+http://localhost:8080/api/transfers/account/1234567890
 ### Cancel a Transfer
 **Request:**
 ```http
@@ -90,6 +123,6 @@ PUT /api/v1/transfers/1/cancel
 ---
 ## Contributing
 Feel free to fork this repository and submit pull requests for enhancements or bug fixes. Ensure that all new features are accompanied by test cases.
----
+
 ## License
-This project is licensed by Benjamin Udegbunam Onyedika 2025
+This project is licensed by Benjamin Onyedika Udegbunam 2025
