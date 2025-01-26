@@ -1,7 +1,7 @@
 please write this readme file better 
 
 # Peerless Transaction Processing System
-This project implements a financial transaction processing system with functionalities for scheduling, canceling, and processing fund transfers. It is built using Java with Spring Boot and follows best practices for clean code and modular design.
+This project implements a financial transaction processing system with functionalities for scheduling, fetching, canceling, and processing fund transfers. It is built using Java with Spring Boot and follows best practices for clean code and modular design.
 ## Features
 - Schedule fund transfers with specific dates.
 - Fetch All Pending transfers.
@@ -93,7 +93,7 @@ GET /account/1234567890
 **Request:**
 ```http
 Delete /api/v1/transfers/1/cancel
-```
+
 **Response:**
 ```json
 {
@@ -118,4 +118,4 @@ Delete /api/v1/transfers/1/cancel
 Feel free to fork this repository and submit pull requests for enhancements or bug fixes. Ensure that all new features are accompanied by test cases.
 
 ## License
-This project is licensed by Benjamin Onyedika Udegbunam 2025
+This project is licensed by Benjamin Onyedika Udegbunam, 2025.
