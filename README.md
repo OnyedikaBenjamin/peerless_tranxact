@@ -4,6 +4,7 @@ please write this readme file better
 This project implements a financial transaction processing system with functionalities for scheduling, canceling, and processing fund transfers. It is built using Java with Spring Boot and follows best practices for clean code and modular design.
 ## Features
 - Schedule fund transfers with specific dates.
+- Fetch All Pending transfers.
 - Cancel pending transfers.
 - Automatically process scheduled transfers using a scheduled task.
 - Comprehensive test cases for all functionalities.
@@ -25,16 +26,7 @@ DB_USERNAME=<your-database-username>
 DB_PASSWORD=<your-database-password>
 ```
 2. Replace `<your-database-host>`, `<database-name>`, `<your-database-username>`, and `<your-database-password>` with your MySQL database credentials.
-### Build and Run
-1. Build the application:
-```bash
-$ ./mvnw clean install
-```
-2. Run the application:
-```bash
-$ java -jar target/peerless-transaction-0.0.1-SNAPSHOT.jar
-```
----
+
 ## Database Schema
 CREATE TABLE fund_transfer (
     transfer_id BIGINT PRIMARY KEY AUTO_INCREMENT,
@@ -44,7 +36,6 @@ CREATE TABLE fund_transfer (
     scheduled_date DATETIME NOT NULL,
     status VARCHAR(20) NOT NULL,
     updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    
     INDEX idx_scheduled_date (scheduled_date),
     INDEX idx_status (status),
     CONSTRAINT chk_amount CHECK (transfer_amount > 0),
