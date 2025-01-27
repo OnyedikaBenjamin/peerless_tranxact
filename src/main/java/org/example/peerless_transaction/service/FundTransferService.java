@@ -13,4 +13,3 @@ public interface FundTransferService {
     List<FundTransferResponse> getScheduledTransfers(Long accountId);
     void cancelTransfer(Long transferId);
 }
-
